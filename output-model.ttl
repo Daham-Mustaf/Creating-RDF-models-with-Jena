@@ -1,0 +1,14 @@
+<http://www.example.org#craig>
+        <http://www.example.org#email>  <c.ellis@usairwaysgroup.com> , <craigellis@yahoo.com> ;
+        <http://www.example.org#homeTel>
+                <(194) 966-1505> .
+
+<http://www.example.org#richard>
+        <http://www.example.org#email>  <richard49@hotmail.com> ;
+        <http://www.example.org#homeTel>
+                <(229) 276-5135> .
+
+<http://www.example.org#cindy>
+        <http://www.example.org#email>  <cindym@gmail.com> ;
+        <http://www.example.org#homeTel>
+                <(245) 646-5488> .

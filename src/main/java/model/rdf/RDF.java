@@ -2,9 +2,16 @@ package model.rdf;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.riot.Lang;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 
 @Data
 @NoArgsConstructor
@@ -14,7 +21,9 @@ public class RDF {
     public void writeModel(){
     // Writes model to System.out in Turtle (TTL) format.
     model.write(System.out, "TTL");
-   }
+
+
+    }
     public void addStatement(String s, String p, String o){
         Resource subject = model.createResource(s);
         Property predicate = model.createProperty(p);
@@ -32,5 +41,15 @@ public class RDF {
         addStatement(ns+"craig", ns+"email",  "craigellis@yahoo.com");
         addStatement(ns+"craig", ns+"email",  "c.ellis@usairwaysgroup.com");
     }
+
+public void writeToFile(){
+    try(OutputStream out = new FileOutputStream("output-model.ttl")) {
+        model.write(out, "TTL");
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
 
 }
