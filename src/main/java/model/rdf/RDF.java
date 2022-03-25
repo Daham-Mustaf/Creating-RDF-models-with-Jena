@@ -21,8 +21,6 @@ public class RDF {
     public void writeModel(){
     // Writes model to System.out in Turtle (TTL) format.
     model.write(System.out, "TTL");
-
-
     }
     public void addStatement(String s, String p, String o){
         Resource subject = model.createResource(s);
@@ -51,5 +49,4 @@ public void writeToFile(){
         e.printStackTrace();
     }
 }
-
 }
